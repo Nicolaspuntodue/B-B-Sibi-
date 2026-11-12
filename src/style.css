@@ -1,0 +1,194 @@
+/* Tokens: un fondo, un inchiostro, un accento azzurro. La notte è un campo intero. */
+:root {
+  --paper: #F3E4C8;
+  --ink: #14263F;
+  --muted: #4C5568;
+  --em: #1D5C9E; --em2: #4FA3E0;
+  --accent: #9CC3EC;
+  --accent-ink: #14263F;
+  --night: #0E1829;
+  --night-ink: #EEF1F6;
+  --night-muted: #A9B4C6;
+
+  --display: "Bricolage Grotesque", system-ui, sans-serif;
+  --text: "Hanken Grotesk", system-ui, sans-serif;
+
+  --step-small: 0.9375rem;
+  --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --step-lead: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --step-head: clamp(2.1rem, 1.2rem + 2.8vw, 3.6rem);
+  --step-display: clamp(2.75rem, 1rem + 4.6vw, 5.25rem);
+
+  --s2: 16px; --s3: 24px; --s4: 40px; --s5: 64px; --s6: 104px; --s7: 168px;
+  --pad: clamp(24px, 5vw, 64px);
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--night); color: var(--ink); font: 400 var(--step-body)/1.55 var(--text); -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+
+h1, h2 { font-family: var(--display); font-weight: 700; letter-spacing: -0.04em; margin: 0; text-wrap: balance; }
+h1 em, h2 em { font-style: normal; color: var(--em); }
+h1 em .w > span, h2 em .w > span { background: linear-gradient(100deg, var(--em), var(--em2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h1 { font-size: var(--step-display); line-height: 0.95; }
+h2 { font-size: var(--step-head); line-height: 1; }
+h3 { font: 600 var(--step-lead)/1.2 var(--text); margin: var(--s3) 0 0; }
+p { margin: 0; max-width: 46ch; }
+.lead { font-size: var(--step-lead); line-height: 1.4; }
+.note { font-size: var(--step-small); color: var(--muted); }
+
+/* La scena: metà schermo che non si muove */
+#stage { position: fixed; inset: 12px 12px 12px auto; width: calc(50vw - 24px); height: calc(100svh - 24px); display: block; background: #173A5E; border-radius: 28px; }
+.stage-caption { position: fixed; right: 28px; bottom: 28px; z-index: 1; margin: 0; padding: 10px 18px; max-width: none; border-radius: 999px; background: rgba(14, 24, 41, 0.55); -webkit-backdrop-filter: blur(16px) saturate(160%); backdrop-filter: blur(16px) saturate(160%); border: 1px solid rgba(255, 255, 255, 0.18); color: #F6EBD4; font-size: var(--step-small); font-weight: 600; }
+
+main { width: 50vw; position: relative; z-index: 1; background: var(--paper); }
+/* La barra è un vetro che galleggia sopra la pagina */
+header.bar { position: fixed; top: 12px; left: 12px; z-index: 3; width: calc(50vw - 24px); display: flex; align-items: center; gap: var(--s3); padding: 8px 8px 8px 24px; border-radius: 999px; background: rgba(23, 58, 94, 0.72); -webkit-backdrop-filter: blur(20px) saturate(180%); backdrop-filter: blur(20px) saturate(180%); border: 1px solid rgba(255, 255, 255, 0.14); }
+main section { scroll-margin-top: 72px; }
+.wordmark { font: 700 1.375rem/1 var(--display); letter-spacing: -0.02em; text-decoration: none; margin-right: auto; white-space: nowrap; }
+.bar nav { display: flex; gap: var(--s3); white-space: nowrap; }
+@media (max-width: 1239px) { .bar nav { display: none; } }
+.bar nav a, .close nav a { text-decoration: none; font-size: var(--step-small); font-weight: 600; padding: 12px 0; }
+.bar nav a:hover, .close nav a:hover { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+
+.btn { display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: var(--ink); color: var(--bg, var(--paper)); font-weight: 600; text-decoration: none; transition: transform 0.15s var(--ease); }
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: scale(0.97); }
+.btn-small { min-height: 44px; padding: 0 20px; font-size: var(--step-small); }
+.link { font-weight: 600; text-underline-offset: 6px; text-decoration-thickness: 2px; padding: 12px 0; display: inline-block; }
+.link:hover { text-decoration-color: var(--accent); }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2) var(--s3); max-width: none; }
+
+.window { display: none; }
+.sheet { padding: var(--s6) var(--pad); display: flex; flex-direction: column; gap: var(--s3); }
+.sheet > h2 { margin-bottom: var(--s2); }
+.hero .sheet { min-height: 100svh; justify-content: center; padding-block: 120px var(--s5); gap: var(--s4); }
+.hero .sheet h1 { max-width: 12ch; }
+
+/* Due colori soli: il blu e la crema */
+.f-blue { --bg: #173A5E; --ink: #F6EBD4; --muted: #BCC9D8; --em: #9CC3EC; --em2: #F6EBD4; }
+.night { --bg: var(--night); --muted: var(--night-muted); --ink: var(--night-ink); --em: #9CC3EC; --em2: #F6EBD4; }
+.night, [class*="f-"] { background: var(--bg); color: var(--ink); }
+
+.night + .night .sheet { padding-top: 0; }
+
+/* Fotografie: angoli morbidi, una sola proporzione */
+.plate { margin: var(--s3) 0; overflow: hidden; aspect-ratio: 3 / 2; border-radius: 24px; }
+.plate img { width: 100%; height: 100%; object-fit: cover; }
+.plate-offset { width: 62%; margin-left: auto; }
+.gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: var(--s2); }
+.gallery .plate { margin: 0; border-radius: 20px; }
+.gallery .wide { grid-column: 1 / -1; }
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .plate img { animation: drift linear both; animation-timeline: view(); }
+    .plate { animation: open linear both; animation-timeline: view(); animation-range: entry 0% entry 80%; }
+    @keyframes open { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0); } }
+    @keyframes drift { from { transform: scale(1.16) translateY(-4%); } to { transform: scale(1) translateY(4%); } }
+  }
+}
+
+/* Schede: scelta della camera e del motivo del viaggio */
+.picker { margin-top: var(--s3); }
+.tabs { display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; margin-bottom: var(--s3); border-radius: 28px; background: color-mix(in srgb, var(--ink) 10%, transparent); }
+.tabs button { appearance: none; border: 0; background: none; padding: 0 18px; min-height: 44px; border-radius: 999px; font: 600 1rem/1.2 var(--text); color: var(--muted); cursor: pointer; transition: color 0.2s, background-color 0.2s; }
+.tabs button:hover { color: var(--ink); }
+.tabs button[aria-selected="true"] { background: var(--ink); color: var(--bg, var(--paper)); }
+.js [role="tabpanel"][hidden] { display: none; }
+.js [role="tabpanel"] { animation: panel 0.5s var(--ease); }
+@keyframes panel { from { opacity: 0; transform: translateY(12px); } }
+.room { margin-bottom: var(--s4); }
+.room .plate { margin-top: 0; }
+.room p { margin: var(--s2) 0 var(--s3); }
+
+/* I numeri stanno in tessere */
+.figures { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.figures > div { padding: 20px; border-radius: 24px; background: color-mix(in srgb, var(--ink) 9%, transparent); }
+.figures > div:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.figures dt { font: 700 clamp(2rem, 1.4rem + 1.6vw, 2.75rem)/1 var(--display); letter-spacing: -0.04em; margin-bottom: 10px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.figures dd { margin: 0; font-size: var(--step-small); line-height: 1.45; }
+
+blockquote { margin: var(--s4) 0 var(--s3); }
+blockquote p { font: 600 var(--step-head)/1.08 var(--display); letter-spacing: -0.03em; max-width: 18ch; }
+blockquote footer { margin-top: var(--s2); font-size: var(--step-small); color: var(--muted); }
+
+.letter { padding-bottom: var(--s7); }
+.portrait { width: 132px; height: 132px; object-fit: cover; object-position: 50% 20%; border-radius: 50%; }
+.sign { font: 600 var(--step-lead)/1.3 var(--display); margin-top: var(--s2); }
+
+address { font-style: normal; font-size: var(--step-lead); line-height: 1.5; }
+address a { text-underline-offset: 6px; text-decoration-thickness: 2px; }
+
+/* Prenotazione: campi pieni, niente decorazioni */
+[hidden] { display: none !important; }
+.booking { display: grid; gap: var(--s3); margin-top: var(--s2); }
+.booking label, .booking legend { font-weight: 600; font-size: var(--step-small); }
+.booking fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; }
+.booking legend { padding: 0; margin-bottom: 8px; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s2); }
+.booking input:not([type="radio"]), .booking select, .booking textarea { display: block; width: 100%; min-height: 52px; margin-top: 8px; padding: 12px 16px; border: 1px solid color-mix(in srgb, var(--ink) 25%, transparent); border-radius: 14px; background: #fff; color: var(--ink); font: 400 var(--step-body)/1.3 var(--text); }
+.choice { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 16px; border: 1px solid color-mix(in srgb, var(--ink) 25%, transparent); border-radius: 14px; background: #fff; cursor: pointer; transition: background-color 0.2s, color 0.2s; }
+.choice input { accent-color: var(--accent); width: 20px; height: 20px; margin: 0; }
+.choice span:last-child { margin-left: auto; font-weight: 400; }
+.choice { color: #14263F; }
+.choice:has(input:checked) { background: #14263F; color: #F6EBD4; }
+.choice:has(input:focus-visible) { outline: 3px solid var(--ink); outline-offset: 3px; }
+.summary { font: 600 var(--step-lead)/1.3 var(--display); letter-spacing: -0.02em; max-width: none; }
+.booking .btn, button.link { border: 0; font: 600 var(--step-body)/1 var(--text); cursor: pointer; justify-self: start; }
+button.link { background: none; color: inherit; text-decoration: underline; }
+.booking-done { display: grid; gap: var(--s2); }
+#booking-recap { white-space: pre-line; font-size: var(--step-lead); line-height: 1.5; max-width: none; }
+.js .nojs { display: none; }
+html:not(.js) .booking { display: none; }
+
+/* Chiusura: il nome sull'ultima fotografia */
+.close { position: relative; z-index: 4; min-height: 100svh; display: flex; flex-direction: column; justify-content: space-between; padding: var(--s4) var(--pad) var(--s3); color: var(--paper); background: var(--night); overflow: hidden; }
+.close > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.45); }
+.close > :not(img) { position: relative; }
+.close-top { display: flex; justify-content: space-between; gap: var(--s4); }
+.close nav { display: grid; }
+.close p { max-width: none; }
+.close-name { font: 800 17vw/0.8 var(--display); letter-spacing: -0.05em; margin: auto 0 var(--s3); white-space: nowrap; }
+.legal { font-size: 0.8125rem; }
+
+.w { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.16em; margin-bottom: -0.16em; }
+.w > span { display: inline-block; }
+
+/* Entrate: sfalsate, una volta sola. Senza JS tutto resta visibile. */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); transition-delay: calc(var(--i, 0) * 80ms); }
+  .js [data-reveal].in { opacity: 1; transform: none; }
+  /* I titoli entrano parola per parola, da sotto la riga */
+  .js :is(h1, h2)[data-reveal] { opacity: 1; transform: none; }
+  .js :is(h1, h2)[data-reveal] .w > span { transform: translateY(115%); transition: transform 0.9s var(--ease); transition-delay: calc(var(--w) * 55ms); }
+  .js :is(h1, h2)[data-reveal].in .w > span { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Telefono: il cielo sta dietro, i fogli gli scorrono sopra lasciando finestre */
+@media (max-width: 899px) {
+  #stage { width: 100vw; height: 100svh; inset: 0; border-radius: 0; }
+  .stage-caption { display: none; }
+  main { width: auto; background: none; }
+  header.bar { left: 8px; right: 8px; top: 8px; width: auto; }
+  main > section[data-body] { background: none; }
+  .bar nav { display: none; }
+  .window { display: block; height: 52svh; }
+  .hero .window { height: 40svh; }
+  .sheet { background: var(--bg, var(--paper)); padding-block: var(--s5); }
+  .hero .sheet { min-height: 0; gap: var(--s3); padding-top: var(--s5); }
+  .figures > div { grid-template-columns: 5.5rem 1fr; gap: var(--s2); }
+  .field-row { grid-template-columns: 1fr; }
+  .plate-offset { width: 72%; }
+  .close-name { font-size: 21vw; }
+  .close { min-height: 88svh; }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  header.bar { background: #173A5E; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .stage-caption { background: #0E1829; -webkit-backdrop-filter: none; backdrop-filter: none; }
+}

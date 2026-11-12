@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>B&B Sibi · Bed and Breakfast a Chieti Scalo</title>
+  <meta name="description" content="B&B Sibi a Chieti Scalo: quattro camere con bagno privato a 340 metri dall'Università d'Annunzio. Colazione, WiFi e parcheggio privato inclusi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <canvas id="stage" aria-hidden="true"></canvas>
+  <p class="stage-caption" id="caption">La casa del B&amp;B Sibi</p>
+
+  <header class="bar f-blue">
+    <a class="wordmark" href="#top">B&amp;B Sibi</a>
+    <nav aria-label="Sezioni">
+      <a href="#colazione">Colazione</a>
+      <a href="#dove">Dove siamo</a>
+      <a href="#camere">Camere</a>
+      <a href="#sibilla">Sibilla</a>
+    </nav>
+    <a class="btn btn-small" href="#prenota">Prenota</a>
+  </header>
+
+  <main id="top">
+    <section class="hero f-blue" data-body="0">
+      <div class="window" aria-hidden="true"></div>
+      <div class="sheet">
+        <h1 data-reveal>Una stanza <em>per sé,</em> a Chieti Scalo</h1>
+        <p class="lead" data-reveal>Sibi in latino vuol dire «per sé». È anche il nome di Sibilla, che ti apre il cancello di un B&amp;B con quattro camere a 340 metri dall'Università d'Annunzio.</p>
+        <p class="actions" data-reveal>
+          <a class="btn" href="#prenota">Prenota una camera</a>
+          <a class="link" href="https://wa.me/393913550634?text=Buongiorno%20Sibilla%2C%20vorrei%20sapere%20se%20c%27%C3%A8%20una%20camera%20libera." target="_blank" rel="noopener">Scrivi a Sibilla su WhatsApp</a>
+        </p>
+        <p class="note" data-reveal>Colazione, WiFi e parcheggio privato sono compresi. Check-in dalle 12 alle 20.</p>
+      </div>
+    </section>
+
+    <section id="colazione" data-body="0">
+      <div class="window" aria-hidden="true"></div>
+      <div class="sheet">
+        <h2 data-reveal>La colazione la apparecchia <em>Sibilla</em></h2>
+        <p data-reveal>Cornetti, ferratelle abruzzesi, pancake, fette biscottate, biscotti, frutta secca, panini e cracker. Con marmellata, Nutella, yogurt, burro e succhi. Il caffè è in moka o in cialde, poi tè e tisane.</p>
+        <figure class="plate" data-reveal>
+          <img src="/img/colazione.jpg" width="1200" height="800" alt="La tavola della colazione al B&B Sibi: cereali, bombolone, tazze e bicchieri">
+        </figure>
+        <p data-reveal>Se hai un'intolleranza o un'allergia, dillo quando prenoti: la tavola cambia per te. Acqua e caffè restano a disposizione tutto il giorno, nella cucina comune.</p>
+        <figure class="plate plate-offset" data-reveal>
+          <img src="/img/cucina.jpg" width="1200" height="800" loading="lazy" alt="La cucina comune con la tavola apparecchiata">
+        </figure>
+      </div>
+    </section>
+
+    <section id="dove" class="f-blue" data-body="1">
+      <div class="window" aria-hidden="true"></div>
+      <div class="sheet">
+        <h2 data-reveal>Vicino a quello per cui <em>sei venuto</em></h2>
+        <p data-reveal>Chieti Scalo è la città bassa, ai piedi del colle: qui c'è l'università, e Via dei Vestini 70/C è a due passi. Dimmi perché sei a Chieti e ti dico quanto manca.</p>
+        <div class="picker" data-reveal>
+          <div class="tabs" role="tablist" aria-label="Perché sei a Chieti">
+            <button role="tab" aria-selected="false" aria-controls="why-universita" id="t-universita">L'università</button>
+            <button role="tab" aria-selected="false" aria-controls="why-lavoro" id="t-lavoro">Il lavoro</button>
+            <button role="tab" aria-selected="false" aria-controls="why-viaggio" id="t-viaggio">Un viaggio</button>
+          </div>
+          <dl class="figures" role="tabpanel" id="why-universita" aria-labelledby="t-universita">
+            <div><dt>340 m</dt><dd>dall'Università Gabriele d'Annunzio: cinque minuti a piedi per un esame, un concorso o una laurea.</dd></div>
+            <div><dt>500 m</dt><dd>dal campus universitario, con le facoltà e le biblioteche.</dd></div>
+            <div><dt>1 km</dt><dd>dalla stazione di Chieti Madonna delle Piane, se arrivi in treno.</dd></div>
+          </dl>
+          <dl class="figures" role="tabpanel" id="why-lavoro" aria-labelledby="t-lavoro">
+            <div><dt>5 min</dt><dd>dal casello A14 Pescara Ovest–Chieti.</dd></div>
+            <div><dt>WiFi</dt><dd>gratuito in tutta la casa, con una scrivania per chiudere la giornata.</dd></div>
+            <div><dt>Fattura</dt><dd>su richiesta, per trasferte e rimborsi.</dd></div>
+            <div><dt>0 €</dt><dd>per il parcheggio privato dentro il cancello elettrico.</dd></div>
+          </dl>
+          <dl class="figures" role="tabpanel" id="why-viaggio" aria-labelledby="t-viaggio">
+            <div><dt>8 km</dt><dd>dall'Aeroporto d'Abruzzo.</dd></div>
+            <div><dt>2,6 km</dt><dd>dal centro storico di Chieti, in cima al colle.</dd></div>
+            <div><dt>14 km</dt><dd>dalla casa natale di Gabriele d'Annunzio, a Pescara, e dal mare.</dd></div>
+          </dl>
+        </div>
+        <p data-reveal><a class="link" href="https://www.google.it/maps/dir/?api=1&destination=42.36666039303889,14.153660551592656" target="_blank" rel="noopener">Apri le indicazioni stradali</a></p>
+        <figure class="plate" data-reveal>
+          <img src="/img/patio.jpg" width="1200" height="800" loading="lazy" alt="Lo spazio esterno del B&B Sibi con tavolo e sedie">
+        </figure>
+      </div>
+    </section>
+
+    <section id="camere" data-body="1">
+      <div class="window" aria-hidden="true"></div>
+      <div class="sheet">
+        <h2 data-reveal>Quattro camere, ognuna con <em>il suo bagno</em></h2>
+        <p data-reveal>Bianche, luminose, tutte al piano terra, a pochi passi dal parcheggio. Scegli la tua.</p>
+        <div class="picker" data-reveal>
+          <div class="tabs" role="tablist" aria-label="Le camere">
+            <button role="tab" aria-selected="true" aria-controls="room-terra" id="r-terra">Tripla</button>
+            <button role="tab" aria-selected="false" aria-controls="room-luna" id="r-luna">Matrimoniale</button>
+            <button role="tab" aria-selected="false" aria-controls="room-singola" id="r-singola">Singola</button>
+          </div>
+          <article class="room" role="tabpanel" id="room-terra" aria-labelledby="r-terra">
+            <figure class="plate"><img src="/img/terra.jpg" width="1200" height="796" loading="lazy" alt="Camera tripla con letto matrimoniale"></figure>
+            <h3>Camera tripla, fino a 3 ospiti</h3>
+            <p>Un letto matrimoniale e un singolo. Bagno privato con doccia, aria condizionata, TV e un tavolino per due.</p>
+            <a class="btn" href="#prenota" data-room="tripla">Prenota la tripla, 80 € a notte</a>
+          </article>
+          <article class="room" role="tabpanel" id="room-luna" aria-labelledby="r-luna">
+            <figure class="plate"><img src="/img/luna.jpg" width="1200" height="796" loading="lazy" alt="Camera matrimoniale con testiera grigia e comodini"></figure>
+            <h3>Camera matrimoniale, 2 ospiti</h3>
+            <p>Letto matrimoniale, tende leggere, comodini con le loro lampade. Bagno privato con doccia, aria condizionata e TV. Le matrimoniali sono due.</p>
+            <a class="btn" href="#prenota" data-room="matrimoniale">Prenota la matrimoniale, 80 € a notte</a>
+          </article>
+          <article class="room" role="tabpanel" id="room-singola" aria-labelledby="r-singola">
+            <figure class="plate"><img src="/img/singola.jpg" width="1200" height="799" loading="lazy" alt="Camera singola con letto e tulipani in primo piano"></figure>
+            <h3>Camera singola, 1 ospite</h3>
+            <p>Un letto, un armadio e il suo bagno privato. Per chi resta qualche notte da solo: un esame, un lavoro, un viaggio.</p>
+            <a class="btn" href="#prenota" data-room="singola">Prenota la singola, 60 € a notte</a>
+          </article>
+        </div>
+        <p class="note" data-reveal>In ogni camera: colazione, WiFi, biancheria da letto e da bagno, asciugacapelli, riscaldamento. Tutta la casa è al piano terra.</p>
+        <h3 data-reveal>Il resto della casa</h3>
+        <p data-reveal>Il bagno di ogni camera, il tavolino accanto alla finestra, i fiori sul davanzale con le colline di Chieti fuori.</p>
+        <div class="gallery">
+          <figure class="plate wide" data-reveal><img src="/img/finestra.jpg" width="1200" height="799" loading="lazy" alt="Fiori sul davanzale, con le colline di Chieti fuori dalla finestra"></figure>
+          <figure class="plate" data-reveal><img src="/img/tavolino.jpg" width="1200" height="796" loading="lazy" alt="Una camera con il tavolino bianco, le sedie e la porta scorrevole del bagno"></figure>
+          <figure class="plate" data-reveal><img src="/img/bagno.jpg" width="1200" height="800" loading="lazy" alt="Bagno privato con doccia in vetro e asciugamani puliti"></figure>
+          <figure class="plate" data-reveal><img src="/img/asciugamani.jpg" width="1200" height="799" loading="lazy" alt="Asciugamani piegati e una saponetta sulla mensola del bagno"></figure>
+          <figure class="plate" data-reveal><img src="/img/chiave.jpg" width="1200" height="800" loading="lazy" alt="La chiave nella porta di una camera, con il tavolino bianco sullo sfondo"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="recensioni" class="night" data-body="2">
+      <div class="window" aria-hidden="true"></div>
+      <div class="sheet">
+        <h2 data-reveal>Chi ha dormito qui lo racconta <em>così</em></h2>
+        <dl class="figures" data-reveal>
+          <div><dt>9,8</dt><dd>per la pulizia, su Booking.com.</dd></div>
+          <div><dt>9,7</dt><dd>per il comfort delle camere.</dd></div>
+          <div><dt>9,7</dt><dd>per l'accoglienza di Sibilla.</dd></div>
+          <div><dt>9,3</dt><dd>il voto complessivo, su 107 recensioni verificate.</dd></div>
+          <div><dt>4,8</dt><dd>su 5 nelle 45 recensioni di Google.</dd></div>
+        </dl>
+        <blockquote data-reveal>
+          <p>«Letto comodo, cuscino comodo, molto silenzioso.»</p>
+          <footer>Tatsiana, Bielorussia, su Booking.com</footer>
+        </blockquote>
+        <p data-reveal>Nelle recensioni tornano sempre le stesse cose: la pulizia, il silenzio, la colazione abbondante, il parcheggio dentro il cancello e Sibilla che risponde a ogni messaggio.</p>
+      </div>
+    </section>
+
+    <section id="sibilla" class="night" data-body="2">
+      <div class="sheet letter">
+        <img class="portrait" src="/img/sibilla.jpg" width="1200" height="1169" loading="lazy" alt="Sibilla, che gestisce il B&B Sibi" data-reveal>
+        <h2 data-reveal>Due righe da Sibilla</h2>
+        <p data-reveal>Ho aperto il B&amp;B Sibi dopo altri lavori, quando ho voluto più tempo per la mia famiglia e per me.</p>
+        <p data-reveal>Mi è sempre piaciuto stare con le persone: ascoltare, dare una mano, farlo con il sorriso. Qui lo faccio ogni giorno.</p>
+        <p data-reveal>Chi arriva ha quasi sempre un motivo preciso: un esame, un lavoro da finire, un viaggio. Io ci sono, per le chiavi e per tutto il resto.</p>
+        <p class="sign" data-reveal>Ti aspetto,<br>Sibilla</p>
+      </div>
+    </section>
+
+    <section id="prenota" data-body="3">
+      <div class="window" aria-hidden="true"></div>
+      <div class="sheet">
+        <h2 data-reveal>Prenota <em>direttamente</em> da qui</h2>
+        <p data-reveal>Scegli le date e la camera. La richiesta arriva a Sibilla, che controlla il calendario e ti conferma la camera. Adesso non paghi nulla.</p>
+        <form class="booking" id="booking" data-reveal>
+          <div class="field-row">
+            <label>Arrivo <input type="date" name="arrivo" required></label>
+            <label>Partenza <input type="date" name="partenza" required></label>
+          </div>
+          <fieldset>
+            <legend>Camera</legend>
+            <label class="choice"><input type="radio" name="camera" value="singola" required><span>Singola, 1 ospite</span><span>60 € a notte</span></label>
+            <label class="choice"><input type="radio" name="camera" value="matrimoniale" checked><span>Matrimoniale, 2 ospiti</span><span>80 € a notte</span></label>
+            <label class="choice"><input type="radio" name="camera" value="tripla"><span>Tripla, fino a 3 ospiti</span><span>80 € a notte</span></label>
+          </fieldset>
+          <div class="field-row">
+            <label>Ospiti <select name="ospiti" required></select></label>
+            <label>Nome e cognome <input name="nome" autocomplete="name" required></label>
+          </div>
+          <label>Note per Sibilla, se servono <textarea name="note" rows="3" placeholder="Orario di arrivo, allergie, richiesta di fattura"></textarea></label>
+          <p class="summary" id="summary" aria-live="polite">Scegli le date per vedere il totale.</p>
+          <button class="btn" type="submit">Rivedi la richiesta</button>
+        </form>
+        <div class="booking-done" id="booking-done" hidden tabindex="-1">
+          <h3>La tua richiesta è pronta</h3>
+          <p id="booking-recap"></p>
+          <p class="actions">
+            <a class="btn" id="booking-send" target="_blank" rel="noopener">Invia a Sibilla su WhatsApp</a>
+            <button class="link" type="button" id="booking-edit">Modifica</button>
+          </p>
+          <p class="note">La camera è tua quando Sibilla ti risponde con la conferma. Nessun pagamento online.</p>
+        </div>
+        <p class="nojs">Per prenotare scrivi a Sibilla su <a href="https://wa.me/393913550634">WhatsApp</a> o chiama il <a href="tel:+393913550634">391 355 0634</a>.</p>
+        <p class="note" data-reveal>Tariffe base a notte, colazione, WiFi e parcheggio compresi. Il totale definitivo te lo conferma Sibilla.</p>
+      </div>
+    </section>
+
+    <section id="contatti" data-body="3">
+      <div class="sheet">
+        <h2 data-reveal>Oppure scrivi o chiama</h2>
+        <p class="lead" data-reveal>Domattina il caffè è già sulla moka.</p>
+        <p class="actions" data-reveal>
+          <a class="link" href="https://wa.me/393913550634?text=Buongiorno%20Sibilla%2C%20vorrei%20sapere%20se%20c%27%C3%A8%20una%20camera%20libera." target="_blank" rel="noopener">Scrivi a Sibilla su WhatsApp</a>
+        </p>
+        <address data-reveal>
+          <a href="tel:+393913550634">391 355 0634</a><br>
+          <a href="mailto:bebsibilla@gmail.com">bebsibilla@gmail.com</a><br>
+          Via dei Vestini 70/C, 66100 Chieti Scalo
+        </address>
+        <p class="note" data-reveal>Check-in dalle 12 alle 20, check-out entro le 10. Si parla italiano, inglese e francese. Struttura per non fumatori, gli animali non sono ammessi.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="close" data-body="3">
+    <img src="/img/casa.jpg" width="1200" height="796" loading="lazy" alt="La casa del B&B Sibi vista dal cortile, sotto un cielo sereno">
+    <div class="close-top">
+      <nav aria-label="Piè di pagina">
+        <a href="#colazione">Colazione</a>
+        <a href="#dove">Dove siamo</a>
+        <a href="#camere">Camere</a>
+        <a href="#prenota">Prenota</a>
+        <a href="#contatti">Contatti</a>
+      </nav>
+      <p>Via dei Vestini 70/C<br>66100 Chieti Scalo<br><a href="tel:+393913550634">391 355 0634</a></p>
+    </div>
+    <p class="close-name" aria-hidden="true">B&amp;B Sibi</p>
+    <p class="legal">B&amp;B Sibi · CIN IT069022C1CO6CHLAL · CIR 069022BeB0009 · P.IVA 02692850692 · Sito demo di Punto Due Studio<br>Fotografie di Chieti da Wikimedia Commons: maury3001 (CC BY 3.0), Evvemoscia (CC BY 4.0)</p>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
